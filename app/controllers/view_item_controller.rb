@@ -1,0 +1,2 @@
+class ViewItemController < ApplicationController
+end

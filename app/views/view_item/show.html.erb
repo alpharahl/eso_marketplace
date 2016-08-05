@@ -1,0 +1,10 @@
+<% item = Item.find(params[:id]) %>
+
+<div class="container">
+  <h1>Item:<%= item.name %></h1>
+  <div>
+    <% item.getSales.each_with_index do |s,ind| %>
+      Sale <%= " #{ind}: #{s[0]} gold" %>
+    <% end %>
+  </div>
+</div>

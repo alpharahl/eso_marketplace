@@ -1,0 +1,2 @@
+module ViewItemHelper
+end
