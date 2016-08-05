@@ -1,12 +1,8 @@
 class Item < ActiveRecord::Base
 	has_many :Sales
 
-	def getSales
-		prices = Array.new
-		Sale.where("item_id='#{self.id}'").each do |s|
-			prices << {:price => s.price, :date => s.date}
-		end
-		prices
+	def get_sales
+		Sale.where("item_id='#{self.id}'")
 	end
 
 	def self.get_or_create_item(item_name)

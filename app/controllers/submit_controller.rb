@@ -1,4 +1,4 @@
 class SubmitController < ApplicationController
-	def new
+	def input(data)
 	end
 end
