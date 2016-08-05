@@ -4,7 +4,7 @@
   <h1>Item:<%= item.name %></h1>
   <div>
     <% item.getSales.each_with_index do |s,ind| %>
-      Sale <%= " #{ind}: #{s[0]} gold" %>
+      Sale <%= " #{ind}: #{s[:price]} gold on #{s[:date]}" %>
     <% end %>
   </div>
 </div>
