@@ -1,10 +1,16 @@
-
-
 <% item = Item.find(params[:id]) %>
 
 <div class="container">
   <h1>Item:<%= item.name %></h1>
-
-  <%= scatter_chart  Sale.where("item_id='#{item.id}'").pluck(:date,:price)%>
+  <% sale_data = Array.new
+     Sale.where("item_id='#{item.id}'").each_with_index{|s| sale_data << s.price} %>
+  
+  <% total = 0
+     sale_data.each do |s| total += s end %>
+  <% if sale_data.count != 0 %>
+    <%= "Average: #{total/sale_data.count}" %>
+  <% else %>
+    <%= "Sale data count returned 0" %>
+  <% end %>
 
 </div>

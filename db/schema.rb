@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160805022238) do
+ActiveRecord::Schema.define(version: 20160827223222) do
 
   create_table "items", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160805022238) do
     t.string   "item_id"
     t.string   "name"
     t.integer  "rarity"
+    t.string   "item_link"
   end
 
   create_table "sales", force: :cascade do |t|
@@ -27,6 +28,8 @@ ActiveRecord::Schema.define(version: 20160805022238) do
     t.integer  "price"
     t.date     "date"
     t.integer  "item_id"
+    t.integer  "quantity"
+    t.integer  "unique_id"
   end
 
   add_index "sales", ["item_id"], name: "index_sales_on_item_id"
